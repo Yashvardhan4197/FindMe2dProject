@@ -12,3 +12,4 @@
  - **Complete Game Cycle** (Pause, Resume, Restart, Main Menu, Level Complete, Level Failed).
  - **Level Unlocking System**.
  - **Different Powers**
+ - **Health Bar + Health functionality**
