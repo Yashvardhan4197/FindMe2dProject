@@ -20,6 +20,20 @@ public class LevelUIHandler : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+    void Start()
+    {
+        level1.onClick.AddListener(GoToLevel1);
+        level2.onClick.AddListener(GoToLevel2);
+        level3.onClick.AddListener(GoToLevel3);
+
+
+        //Check or change Colors
+        goBack.onClick.AddListener(GobackToLobby);
+
+
+        //Set UI
         for (int i = 0; i < 3; i++)
         {
             if (LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[i]) == LevelStatus.locked)
@@ -99,19 +113,10 @@ public class LevelUIHandler : MonoBehaviour
             }
         }
     }
-    void Start()
-    {
-        level1.onClick.AddListener(GoToLevel1);
-        level2.onClick.AddListener(GoToLevel2);
-        level3.onClick.AddListener(GoToLevel3);
-
-
-        //Check or change Colors
-        goBack.onClick.AddListener(GobackToLobby);
-    }
 
     private void GobackToLobby()
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
         gameObject.SetActive(false);
     }
 
@@ -125,7 +130,12 @@ public class LevelUIHandler : MonoBehaviour
     {
         if (LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[0])==LevelStatus.completed|| LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[0]) == LevelStatus.unlocked)
         {
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
             SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.blockedPath);
         }
         
     }
@@ -133,7 +143,12 @@ public class LevelUIHandler : MonoBehaviour
     {
         if (LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[1]) == LevelStatus.completed || LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[1]) == LevelStatus.unlocked)
         {
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
             SceneManager.LoadScene(2);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.blockedPath);
         }
 
     }
@@ -142,7 +157,12 @@ public class LevelUIHandler : MonoBehaviour
 
         if (LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[2]) == LevelStatus.completed || LevelManager.Instance.getLevelStatus(LevelManager.Instance.Levels[2]) == LevelStatus.unlocked)
         {
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
             SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.blockedPath);
         }
     }
 }

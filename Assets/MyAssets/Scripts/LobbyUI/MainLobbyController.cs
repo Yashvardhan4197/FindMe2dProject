@@ -23,16 +23,19 @@ public class MainLobbyController : MonoBehaviour
 
     private void OpenTut()
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
         tutorialTab.SetActive(true);
     }
 
     private void QuitGame()
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
         Application.Quit();
     }
 
     private void StartGame()
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
         levelsTab.SetActive(true);
     }
 }

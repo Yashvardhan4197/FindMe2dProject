@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if(instance == null)
         {
             instance = this;
@@ -53,4 +54,6 @@ public class LevelManager : MonoBehaviour
     {
         setLevelStatus(levelName, LevelStatus.completed);
     }
+
+    
 }

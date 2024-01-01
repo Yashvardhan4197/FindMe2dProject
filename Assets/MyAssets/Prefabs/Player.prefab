@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 26525823848306913}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.5393, y: -2.0216, z: -9.9873085}
-  m_LocalScale: {x: 0.3, y: 0.69, z: 0}
+  m_LocalScale: {x: 0.16565159, y: 0.1656516, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4087509864872292794}
@@ -160,6 +160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {fileID: 0}
+  healthBarController: {fileID: 0}
+  heartController: {fileID: 0}
+  pauseController: {fileID: 0}
   speed: 10
   jumpForce: 8
   JumpOverlapArea: {fileID: 4087509864872292794}
@@ -167,7 +170,10 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 8
-  extraJumpValues: 0
+  rb2d: {fileID: 0}
+  bulletBody: {fileID: 4383597556514366170, guid: cfe3379806bc4e743ac40bf239a1d844, type: 3}
+  bulletDistance: 20
+  bulletSpeed: 5
 --- !u!61 &3481197691198480469
 BoxCollider2D:
   m_ObjectHideFlags: 0

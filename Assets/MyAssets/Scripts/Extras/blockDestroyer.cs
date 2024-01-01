@@ -18,6 +18,7 @@ public class blockDestroyer : MonoBehaviour
        if(collision.gameObject.GetComponent<PlayerController>() != null)
        {
             blockDestroy();
+            SoundManager.Instance.PlaySFX(SoundManager.Sounds.blockedPath);
         }
     }
     //private void OnTriggerEnter2D(Collider2D collision)

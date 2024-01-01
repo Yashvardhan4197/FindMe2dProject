@@ -16,6 +16,7 @@ public class TutorialTabController : MonoBehaviour
 
     private void GoBackToTab()
     {
+        SoundManager.Instance.PlaySFX(SoundManager.Sounds.buttonSelect);
         gameObject.SetActive(false);
     }
 }

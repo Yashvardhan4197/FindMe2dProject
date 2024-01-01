@@ -18,7 +18,7 @@ public class ObjectController : MonoBehaviour
 
     private void Awake()
     {
-        currentSize = Objects.medium;
+        currentSize = Objects.small;
     }
     private void Update()
     {
