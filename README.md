@@ -2,7 +2,7 @@
 - A game allowing the player to have bunch of abilities.
 - a 2d Platform traversing game with different levels.
 - Make sure to reach the end point to finish the level and beware of the ghosts.
-- **Play** : [Play]([https://play.unity.com/mg/other/webgl-builds-384555](https://yashvardhan1.itch.io/findme-2d))
+- **Play** : [Play](https://yashvardhan1.itch.io/findme-2d)
 
 ![FindME2D](https://github.com/Yashvardhan4197/FindMe2dProject/assets/99320683/d08cf8da-3f83-405d-bf60-fd222a8bbc62)
 
