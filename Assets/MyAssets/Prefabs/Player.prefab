@@ -170,10 +170,11 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 8
-  rb2d: {fileID: 0}
+  rb2d: {fileID: 5553207309631997566}
   bulletBody: {fileID: 4383597556514366170, guid: cfe3379806bc4e743ac40bf239a1d844, type: 3}
   bulletDistance: 20
   bulletSpeed: 5
+  objectController: {fileID: 26525823848306913}
 --- !u!61 &3481197691198480469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4359579979655518049}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

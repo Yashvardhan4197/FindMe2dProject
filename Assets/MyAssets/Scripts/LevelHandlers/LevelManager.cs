@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     private static LevelManager instance;
     public static LevelManager Instance { get { return instance; } }
     [SerializeField] public string[] Levels;

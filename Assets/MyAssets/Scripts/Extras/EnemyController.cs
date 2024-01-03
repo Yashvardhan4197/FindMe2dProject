@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -8,17 +5,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] int speed;
     [SerializeField] Transform[] patrolPoints;
     [SerializeField] int target;
-
+    [SerializeField] int recoilOnPlayer;
+    [SerializeField] int reduceHealth;
     [SerializeField] HealthBarController healthBarController;
     [SerializeField] PlayerController playerController;
     [SerializeField] ObjectController objectController;
-    // Start is called before the first frame up
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         MoveEnemy();
@@ -57,23 +49,23 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Bullet")
+        if (collision.GetComponent<BulletCollision>() != null)
         {
             Destroy(gameObject);
         }
         if (objectController.currentSize != ObjectController.Objects.large)
         {
-            if (collision.tag == "Player")
+            if (collision.GetComponent<PlayerController>() != null)
             {
-                healthBarController.reduceHealthByEnemy(3);
+                healthBarController.reduceHealthByEnemy(reduceHealth);
                 SoundManager.Instance.PlaySFX(SoundManager.Sounds.Damage);
                 if (target == 1)
                 {
-                    playerController.rb2d.velocity = new Vector2(1, 0) * 5;
+                    playerController.rb2d.velocity = new Vector2(1, 0) * recoilOnPlayer;
                 }
                 else
                 {
-                    playerController.rb2d.velocity = new Vector2(-1, 0) * 5;
+                    playerController.rb2d.velocity = new Vector2(-1, 0) * recoilOnPlayer;
                 }
             }
         }

@@ -18,14 +18,6 @@ public class HealthBarController : MonoBehaviour
         UpdateHealthSlider();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if(playerOnSpike)
-        //{
-        //    reduceHealthBar();
-        //}
-    }
 
     private void UpdateHealthSlider()
     {

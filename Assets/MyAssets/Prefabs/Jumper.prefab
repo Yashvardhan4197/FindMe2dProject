@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbefbad38d3d2b4ca859f27c8e4c555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2d: {fileID: 6027052673101228937}
   jumperPower: 20
 --- !u!61 &2328534610832335428
 BoxCollider2D:

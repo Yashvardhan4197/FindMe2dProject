@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] GameObject[] sprites;
     private int health;
     private int maxHealth = 3;
@@ -19,11 +15,6 @@ public class HealthController : MonoBehaviour
         RefreshUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void RefreshUI()
     {

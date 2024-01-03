@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ObjectController : MonoBehaviour
 {
@@ -22,46 +19,50 @@ public class ObjectController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentSize = Objects.small;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentSize = Objects.medium;
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            currentSize = Objects.large;
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    currentSize = Objects.small;
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    currentSize = Objects.medium;
+        //}
+        //if(Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    currentSize = Objects.large;
+        //}
     }
 
     
 
     public void SetSize()
     {
-        Destroy(GetComponent<BoxCollider2D>());
-
+        BoxCollider2D existingCollider=gameObject.GetComponent<BoxCollider2D>();
+        if (existingCollider != null)
+        {
+            DestroyImmediate(GetComponent<BoxCollider2D>());
+        }
         switch (currentSize)
         {
             case Objects.small:
                 {
                     transform.localScale = SmallObject;
-                    gameObject.AddComponent<BoxCollider2D>();
                     break;
                 }
             case Objects.medium:
                 {
                     transform.localScale = MediumObject;
-                    gameObject.AddComponent<BoxCollider2D>();
                         break;
                 }
             case Objects.large:
                 {
                     transform.localScale = LargeObject;
-                    gameObject.AddComponent<BoxCollider2D>();
                     break;
                 }
         }
+
+          gameObject.AddComponent<BoxCollider2D>();
+        
     }
+
 }

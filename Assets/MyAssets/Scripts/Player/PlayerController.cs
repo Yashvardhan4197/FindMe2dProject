@@ -4,7 +4,6 @@ using static ObjectController;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     [SerializeField] Transform startPosition;
     [SerializeField] HealthBarController healthBarController;
@@ -15,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform JumpOverlapArea;
     [SerializeField] float radius;
     [SerializeField] LayerMask isGround;
-    [HideInInspector]public Rigidbody2D rb2d;
+    [SerializeField]public Rigidbody2D rb2d;
     private int extraJump;
     private int extraJumpValues=3;
 
@@ -24,13 +23,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bulletDistance;
     [SerializeField] float bulletSpeed;
     private bool isPaused=false;
-    private ObjectController objectController;
+    [SerializeField] ObjectController objectController;
     private void Awake()
     {
-        objectController = GetComponent<ObjectController>();
         GoToStartPosition();
         extraJump = extraJumpValues;
-        rb2d = GetComponent<Rigidbody2D>();
         pauseController.SetActive(false);
         objectController.SetSize();
     }
@@ -40,7 +37,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -149,21 +145,22 @@ public class PlayerController : MonoBehaviour
         if(objectController.currentSize == Objects.small)
         {
             rb2d.velocity = new Vector2(0f, 1f) * jumpForce;
-            objectController.SetSize();
+            //objectController.SetSize();
             extraJumpValues = 3;
         }
         if (objectController.currentSize == Objects.medium)
         {
             rb2d.velocity = new Vector2(0f, 1f) * jumpForce;
-            objectController.SetSize();
+            //objectController.SetSize();
             extraJumpValues = 2;
         }
         if(objectController.currentSize == Objects.large)
         {
             rb2d.velocity = new Vector2(0f, 1f) * jumpForce;
-            objectController.SetSize();
+            //objectController.SetSize();
             extraJumpValues = 0;
         }
+        objectController.SetSize();
     }
 
 
@@ -226,8 +223,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            //healthBarController.playerOnSpike = true;
-            //healthBarController.reduceHealthBar();
+            healthBarController.playerOnSpike = true;
+            healthBarController.reduceHealthBar();
         }
         if (collision.gameObject.CompareTag("Platform"))
         {
@@ -253,7 +250,6 @@ public class PlayerController : MonoBehaviour
             pauseController.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
-            Debug.Log("Pause");
         }
         else if(isPaused == true)
         {

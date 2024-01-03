@@ -1,26 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JumperController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Rigidbody2D rb2d;
+    [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private int jumperPower;
-    private void Awake()
-    {
-        rb2d= GetComponent<Rigidbody2D>();
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

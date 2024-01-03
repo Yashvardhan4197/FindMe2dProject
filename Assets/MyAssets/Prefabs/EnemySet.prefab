@@ -259,6 +259,8 @@ MonoBehaviour:
   - {fileID: 5283714851571724859}
   - {fileID: 2408284668285452906}
   target: 0
+  recoilOnPlayer: 5
+  reduceHealth: 2
   healthBarController: {fileID: 0}
   playerController: {fileID: 0}
   objectController: {fileID: 0}
